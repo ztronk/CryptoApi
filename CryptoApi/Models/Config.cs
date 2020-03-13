@@ -8,7 +8,7 @@ namespace CryptoApi.Models
         private static string sqlConnName;
 
         /// <summary>Данные для подключения к серверу базы данных</summary>
-        public static string sqlConnName
+        public static string SqlConnName
         {
             get
             {

@@ -5,11 +5,16 @@ using System.Linq;
 
 namespace CryptoApi.Query
 {
-    public class CryptoQuery : BaseQuery<Dictionary<char, char>()>
+    public class CryptoQuery : BaseQuery<Encryption>
     {
-        public Dictionary<char, char> GetCryptoDict()
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            return _context.ToDictionary() { new Dictionary<char, char>() { } };
+            modelBuilder.Entity<Encryption>().ToTable("Encryption");
+        }
+
+        public List<Encryption> GetEncriptionDict()
+        {
+            return GetList().ToList();
         }
     }
 }

@@ -7,10 +7,10 @@ namespace CryptoApi.Query
     public class BaseQuery<T> : DbContext where T : class
     {
         public BaseQuery()
-            : base(Config.sqlConnName)
+            : base(Config.SqlConnName)
         { }
 
-        public DbSet<T> _context { get; set; }
+        public DbSet<T> context { get; set; }
 
         /// <summary>
         /// Получение всех записей сущности
@@ -18,7 +18,7 @@ namespace CryptoApi.Query
         /// <returns></returns>
         public IEnumerable<T> GetList()
         {
-            foreach (var item in _context)
+            foreach (var item in context)
             {
                 yield return item;
             }
@@ -30,7 +30,7 @@ namespace CryptoApi.Query
         /// <param name="entity"></param>
         public void CreateEntity(T entity)
         {
-            _context.Add(entity);
+            context.Add(entity);
             SaveChanges();
         }
 
@@ -40,7 +40,7 @@ namespace CryptoApi.Query
         /// <param name="entity"></param>
         public void UpdateEntity(T entity)
         {
-            _context.Add(entity);
+            context.Add(entity);
             Entry(entity).State = EntityState.Modified;
             SaveChanges();
         }
