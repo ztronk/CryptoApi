@@ -23,6 +23,7 @@ namespace CryptoApi.Models
         public DateTime CreatedDate { get; set; }
 
         /// <summary>Текст запроса</summary>
+        [StringLength(100, MinimumLength = 1)]
         [JsonProperty(PropertyName = "text", NullValueHandling = NullValueHandling.Ignore)]
         public string Text { get; set; }
     }

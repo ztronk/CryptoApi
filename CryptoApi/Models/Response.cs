@@ -2,7 +2,7 @@
 
 namespace CryptoApi.Models
 {
-    public class Reponse<T> where T : class
+    public class Response<T> where T : class
     {
         /// <summary>Возвращаемая сущность</summary>
         [JsonProperty(PropertyName = "entity", NullValueHandling = NullValueHandling.Ignore)]

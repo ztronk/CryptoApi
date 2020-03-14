@@ -1,4 +1,5 @@
-﻿using CryptoApi.Models;
+﻿using CryptoApi.Attribute;
+using CryptoApi.Models;
 using CryptoApi.Utills;
 using System.Web.Http;
 
@@ -13,9 +14,10 @@ namespace CryptoApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("api/crypto/get/")]
+        [ValidateRequest]
         public IHttpActionResult Get(Request request)
         {
-            var res = EncryptionUtills.Encrypt(request);
+            var res = EncryptionUtills.EncryptProcess(request);
             return Ok(res);
         }
     }

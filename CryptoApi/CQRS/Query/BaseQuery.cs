@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace CryptoApi.Query
+namespace CryptoApi.CQRS.Query
 {
     public class BaseQuery<T> : DbContext where T : class
     {

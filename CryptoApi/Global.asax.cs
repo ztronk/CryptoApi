@@ -1,4 +1,5 @@
-﻿using CryptoApi.Query;
+﻿using CryptoApi.CQRS.Command;
+using CryptoApi.CQRS.Query;
 using System.Data.Entity;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -17,6 +18,7 @@ namespace CryptoApi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Database.SetInitializer<CryptoQuery>(null);
+            Database.SetInitializer<LogCommand>(null);
         }
     }
 }
