@@ -2,9 +2,11 @@
 using CryptoApi.Models;
 using CryptoApi.Utills;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CryptoApi.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CryptoController : ApiController
     {
         /// <summary>
